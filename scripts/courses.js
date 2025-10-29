@@ -37,18 +37,6 @@ const courses = [
         completed: true
     },
     {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
-        technology: [
-            'C#'
-        ],
-        completed: false
-    },
-    {
         subject: 'WDD',
         number: 131,
         title: 'Dynamic Web Fundamentals',
@@ -61,6 +49,18 @@ const courses = [
             'JavaScript'
         ],
         completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
+        technology: [
+            'C#'
+        ],
+        completed: false
     },
     {
         subject: 'WDD',
