@@ -1,0 +1,76 @@
+@media (min-width: 720px) {
+    header.site-header {
+        grid-template-columns: 28px 1fr;
+        /* logo | name+nav */
+        column-gap: 12px;
+    }
+
+    #nav-button {
+        display: none;
+    }
+
+
+    /* Put name + nav on same row */
+    .header-main {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        gap: 16px;
+    }
+
+
+    nav.site-nav {
+        position: static;
+        display: block;
+        /* always visible */
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .site-nav ul {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+        padding: 0;
+    }
+
+    .site-nav a {
+        min-height: 40px;
+        line-height: 40px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "title title"
+            "about photo"
+            "courses courses";
+        gap: 1rem;
+        align-items: start;
+    }
+
+    h1 {
+        grid-area: title;
+        margin-top: 0;
+    }
+
+    .about-me {
+        grid-area: about;
+    }
+
+    .student-photo {
+        grid-area: photo;
+        text-align: center;
+    }
+
+    .student-photo img {
+        max-width: 250px;
+        border-radius: 8px;
+    }
+
+    .web-courses {
+        grid-area: courses;
+    }
+}

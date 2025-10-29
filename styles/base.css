@@ -1,0 +1,281 @@
+:root {
+    --bg: #f8fafc;
+    --bg-accent: #0f3c74;
+    --brand: #d4a017;
+
+    --text: #1e293b;
+    --text-dim: #fff;
+
+    --touch: 44px;
+}
+
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.content {
+    padding: 24px;
+    max-width: 72rem;
+    margin-inline: auto;
+}
+
+
+/* --- Header  --- */
+header.site-header {
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+    /* logo | site name | hamburger */
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: #0f3c74;
+    color: var(--text-dim);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.06);
+}
+
+
+.site-header img.logo {
+    width: 24px;
+    height: 24px;
+    display: block;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+
+.site-name {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#nav-button {
+    justify-self: end;
+    inline-size: 44px;
+    block-size: 44px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#nav-button:hover,
+#nav-button:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+    background: rgb(255 255 255 / 0.04);
+}
+
+
+.hamburger::before {
+    content: "☰";
+    font-size: 24px;
+    line-height: 1;
+    color: var(--text-dim);
+}
+
+.hamburger.show::before {
+    content: "×";
+    color: var(--text-dim);
+}
+
+/* --- Navigation (mobile) --- */
+nav.site-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--bg-accent);
+    border-top: 1px solid rgb(255 255 255 / 0.08);
+    box-shadow: 0 12px 20px rgb(0 0 0 / 0.35);
+    display: none;
+    /* hidden by default */
+    z-index: 1100;
+}
+
+.site-nav.open {
+    display: block;
+}
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    display: grid;
+    gap: 4px;
+}
+
+.site-nav a {
+    display: block;
+    min-height: var(--touch);
+    line-height: var(--touch);
+    padding: 0 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 8px;
+    color: var(--text-dim);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: rgb(255 255 255 / 0.06);
+    outline: none;
+}
+
+
+/* MAIN */
+
+main {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: var(--bg-accent);
+    border-bottom: 3px solid var(--brand);
+    padding-bottom: 0.25rem;
+    margin-bottom: 0;
+}
+
+section {
+    background: #f1f5f9;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+section h2 {
+    background: var(--bg-accent);
+    color: white;
+    margin: -1rem -1rem 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+}
+
+.about-me p {
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.student-photo img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    max-width: 200px;
+}
+
+.web-courses .course-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.web-courses button {
+    background: var(--brand);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.web-courses button:hover {
+    background: #b98a10;
+}
+
+.course-buttons button.active {
+    border-bottom: 3px solid var(--bg-accent);
+}
+
+.web-courses .course-list {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.course {
+    background: #e2e8f0;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.total-credits {
+    text-align: center;
+    font-weight: 500;
+    color: var(--text);
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    background: var(--bg-accent);
+    color: var(--text-dim);
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 0.9rem;
+}
+
+.site-footer .footer-content {
+    max-width: 72rem;
+    margin: auto;
+}
+
+.site-footer .social-icons {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.site-footer .social-icons img {
+    filter: brightness(0) invert(1);
+    /* make sure white icons on dark bg */
+    width: 24px;
+    height: 24px;
+}
+
+.site-footer .last-modified {
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* animation for nav reveal */
+@media (prefers-reduced-motion: no-preference) {
+    .site-nav.open {
+        animation: fadeSlide 160ms ease-out;
+    }
+
+    @keyframes fadeSlide {
+        from {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

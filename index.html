@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dylan Cleghorn">
+    <meta name="description" content="Dylan Cleghorn's WDD231 Home Page">
+    <title>Dylan Cleghorn</title>
+    <link rel="preload" href="images/casa.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <img class="logo" src="images/bolt.svg" alt="site logo" width="1" height="1" loading="eager">
+
+        <div class="header-main">
+            <span class="site-name" id="site-name" title="Dylan Cleghorn">Dylan Cleghorn</span>
+
+            <nav class="site-nav" id="site-nav" aria-label="Primary" hidden>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#chamber">Chamber</a></li>
+                    <li><a href="#final">Final</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <button id="nav-button" class="hamburger" aria-label="navigation" aria-expanded="false"
+            aria-controls="site-nav"></button>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <!-- About Me Section -->
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>
+                My name is Dylan. I currently work as an Advisory Consultant for a software company called Archer
+                Technologies. </p>
+            <p>In my
+                free time, I like to write and perform music, play golf, and travel.
+            </p>
+            <p>
+                I am from the great state of Texas.
+            </p>
+        </section>
+
+        <!-- Student Photo Section -->
+        <section class="student-photo">
+            <h2>Student Photo</h2>
+            <img src="images/dylan.jpg" alt="Dylan portrait" width="200" height="200" loading="lazy">
+        </section>
+
+        <!-- Web Certificate Courses Section -->
+        <section class="web-courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="course-buttons">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
+            </div>
+
+            <div class="course-list">
+
+            </div>
+
+            <p class="total-credits">
+                The total credits for courses listed above is <span id="credits">12</span>
+            </p>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p id="copyright"></p>
+            <div class="social-icons">
+                <a href="https://github.com/dylancleghorn" target="_blank" rel="noopener" aria-label="GitHub">
+                    <img src="images/github.svg" alt="GitHub icon" width="24" height="24">
+                </a>
+                <a href="https://www.linkedin.com/in/dylancleghorn" target="_blank" rel="noopener"
+                    aria-label="LinkedIn">
+                    <img src="images/linkedin.svg" alt="LinkedIn icon" width="24" height="24">
+                </a>
+                <a href="https://www.youtube.com/@approachingzionpodcast" target="_blank" rel="noopener"
+                    aria-label="Youtube">
+                    <img src="images/youtube.svg" alt="Youtube icon" width="24" height="24">
+                </a>
+                <a href="https://www.instagram.com/approachingzionpodcast/" target="_blank" rel="noopener"
+                    aria-label="Instagram">
+                    <img src="images/instagram.svg" alt="Instagram icon" width="24" height="24">
+                </a>
+            </div>
+            <p class="last-modified">Last modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+
+</body>
+
+</html>
