@@ -99,7 +99,6 @@ function filterCourses(filter = 'all') {
         });
     }
 
-
     filteredCourses.forEach(course => {
         courseList.appendChild(buildCourseDiv(course))
     })
@@ -116,9 +115,6 @@ document.addEventListener('click', (e) => {
         btn.classList.remove('active'); // remove active from all
     });
     btn.classList.add('active'); // add to the one clicked
-
-
-
 
 });
 
