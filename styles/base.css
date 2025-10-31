@@ -133,9 +133,8 @@ nav.site-nav {
 }
 
 nav li a.active {
-    color: var(--brand);
+    text-decoration: underline;
     font-weight: bold;
-    font-size: 1.1em;
 }
 
 /* MAIN */
