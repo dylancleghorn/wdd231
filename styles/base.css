@@ -9,7 +9,6 @@
     --touch: 44px;
 }
 
-
 html,
 body {
     margin: 0;
@@ -42,14 +41,12 @@ header.site-header {
     box-shadow: 0 1px 0 rgb(255 255 255 / 0.06);
 }
 
-
 .site-header img.logo {
     width: 24px;
     height: 24px;
     display: block;
     object-fit: contain;
 }
-
 
 .site-name {
     font-weight: 700;
@@ -79,7 +76,6 @@ header.site-header {
     outline-offset: 2px;
     background: rgb(255 255 255 / 0.04);
 }
-
 
 .hamburger::before {
     content: "☰";
