@@ -137,6 +137,10 @@ nav.site-nav {
     outline: none;
 }
 
+nav li a.active {
+    color: var(--brand);
+    font-weight: bold;
+}
 
 /* MAIN */
 
