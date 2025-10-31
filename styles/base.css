@@ -48,7 +48,6 @@ header.site-header {
     height: 24px;
     display: block;
     object-fit: contain;
-    filter: brightness(0) invert(1);
 }
 
 
