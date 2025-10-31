@@ -140,6 +140,7 @@ nav.site-nav {
 nav li a.active {
     color: var(--brand);
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 /* MAIN */
