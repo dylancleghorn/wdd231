@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Evergreen Coffee Roasters",
+        "address": "101 Grove Ave, Cleghorn TX",
+        "phone": "+1 (555) 200-1101",
+        "website": "https://evergreencoffee.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 3
+    },
+    {
+        "name": "Pioneer Bank & Trust",
+        "address": "22 Main St, Cleghorn TX",
+        "phone": "+1 (555) 200-1102",
+        "website": "https://pioneerbank.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 2
+    },
+    {
+        "name": "River Tech Solutions",
+        "address": "9 Innovation Way, Cleghorn TX",
+        "phone": "+1 (555) 200-1103",
+        "website": "https://rivertech.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 3
+    },
+    {
+        "name": "Sunrise Fitness",
+        "address": "700 Park Blvd, Cleghorn TX",
+        "phone": "+1 (555) 200-1104",
+        "website": "https://sunrisefit.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 1
+    },
+    {
+        "name": "Valley Hardware",
+        "address": "55 Tools Ln, Cleghorn TX",
+        "phone": "+1 (555) 200-1105",
+        "website": "https://valleyhardware.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 2
+    },
+    {
+        "name": "Blue Sky Realty",
+        "address": "300 River Rd, Cleghorn TX",
+        "phone": "+1 (555) 200-1106",
+        "website": "https://blueskyrealty.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 1
+    },
+    {
+        "name": "Fresh Fields Market",
+        "address": "88 Market Sq, Cleghorn TX",
+        "phone": "+1 (555) 200-1107",
+        "website": "https://freshfields.example.com",
+        "image": "https://placehold.co/100x100",
+        "level": 3
+    }
+]
