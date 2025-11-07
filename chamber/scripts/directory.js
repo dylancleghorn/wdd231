@@ -48,6 +48,7 @@ window.addEventListener("resize", () => {
 async function loadMembers() {
     const res = await fetch('data/members.json')
     const data = await res.json()
+
     renderMembers(data)
 }
 
