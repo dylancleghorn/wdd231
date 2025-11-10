@@ -334,6 +334,248 @@ h1 {
     color: var(--footer-muted)
 }
 
+section>h3 {
+    margin-bottom: 1rem;
+}
+
+
+
+/* === Home page === */
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: .6rem;
+    padding: 1rem;
+    display: grid;
+    gap: .5rem;
+}
+
+
+.card h3,
+.spotlight h4 {
+    color: var(--brand-dark);
+    font-weight: 700;
+}
+
+
+.events ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .4rem;
+}
+
+.events li {
+    padding: .35rem .25rem;
+    border: 1px dashed var(--border-soft);
+    border-radius: .4rem;
+    color: var(--muted);
+}
+
+.events>p {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.weather-now .weather-current {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: .75rem;
+}
+
+.weather-temp {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--brand-dark);
+}
+
+.weather-desc {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.weather-meta {
+    color: #475569;
+    font-size: .9rem;
+}
+
+
+.weather-forecast .forecast-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .4rem;
+}
+
+.weather-forecast .forecast-list li {
+    padding: .5rem .6rem;
+    border: 1px solid var(--border-soft);
+    border-radius: .4rem;
+    color: var(--muted);
+}
+
+
+.spotlight-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+
+.spotlight.card {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: .6rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: .5rem;
+}
+
+
+.spotlight.card img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: .4rem;
+    border: 1px solid var(--border-soft);
+    background: #f8fafc;
+    padding: .25rem;
+}
+
+
+.spotlight.card h4 {
+    font-size: 1.1rem;
+    margin: .25rem 0 .1rem;
+}
+
+.spotlight.card p {
+    color: #475569;
+    font-size: .9rem;
+    display: grid;
+    gap: .25rem;
+}
+
+.spotlight.card .badge {
+    justify-self: start;
+    padding: .35rem .6rem;
+    border-radius: 999px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: .8rem;
+    margin-top: .25rem;
+}
+
+
+.card.spotlight {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: 0.6rem;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+
+.card.spotlight .top-line {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.card.spotlight img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    border: 1px solid var(--border-soft);
+    background: #f8fafc;
+    padding: 0.25rem;
+}
+
+.card.spotlight h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+
+
+.card.spotlight p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+.card.spotlight .badge {
+    align-self: flex-start;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+
+.hero {
+    border: 1px solid var(--border-soft);
+    border-radius: .6rem;
+    overflow: hidden;
+    background: #0b1324;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    opacity: .8;
+}
+
+.hero .hero-text {
+    position: relative;
+    margin: -4rem 1rem 1rem;
+    padding: 1rem;
+    border-radius: .6rem;
+    background: linear-gradient(to bottom right, rgba(2, 6, 23, .65), rgba(2, 6, 23, .8));
+    color: #fff;
+    text-align: center;
+}
+
+.button.cta {
+    display: inline-block;
+    padding: .65rem .9rem;
+    border-radius: .6rem;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid var(--brand);
+}
+
+.button.cta:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.info-row,
+.spotlights {
+    margin-block: 1.5rem 2rem;
+}
+
 
 
 @media(max-width:699px) {

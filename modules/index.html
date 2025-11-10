@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BYUI Course Enrollment (Modules)</title>
+    <link rel="stylesheet" href="styles/base.css" />
+</head>
+
+<body>
+    <header>
+        <h1 id="courseTitle">Course Title</h1>
+    </header>
+
+    <main class="wrapper">
+        <section class="controls">
+
+            <label for="sectionNumber">Section:</label>
+            <select id="sectionNumber"></select>
+
+            <button id="enrollStudent" type="button">Enroll</button>
+            <button id="dropStudent" type="button">Drop</button>
+        </section>
+
+        <section class="output">
+            <h2>Sections</h2>
+            <ul id="sectionsList" class="sections"></ul>
+        </section>
+    </main>
+
+    <script type="module" src="scripts/modules.mjs"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cleghorn Chamber of Commerce — Home</title>
+  <meta name="description"
+    content="Welcome to the Cleghorn Chamber of Commerce. Connect with local businesses, upcoming events, and the Dallas, TX community.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrapper header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="Chamber logo" class="logo">
+        <div>
+          <h1>Cleghorn Chamber</h1>
+          <p class="tagline">Connect • Grow • Thrive</p>
+        </div>
+      </a>
+
+      <button id="menu" aria-expanded="false" aria-controls="primary-nav" class="menu-btn"></button>
+      <nav id="primary-nav" class="nav" aria-label="Main Navigation">
+        <ul>
+          <li class="current"><a href="index.html">Home</a></li>
+          <li><a href="directory.html" aria-current="page">Directory</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <!-- HERO -->
+    <section class="hero" aria-label="Welcome">
+      <picture>
+        <img src="images/hero-sm.jpeg" alt="Downtown skyline" />
+      </picture>
+      <div class="hero-text">
+        <h2>Grow With Cleghorn</h2>
+        <p>Connecting people, businesses, and opportunities in Dallas, TX.</p>
+        <a class="button cta" href="join.html">Join the Chamber</a>
+      </div>
+    </section>
+
+    <!-- ROW: Events • Current Weather • Forecast -->
+    <section class="info-row" aria-label="Events and Weather">
+      <article class="card events" aria-live="polite">
+        <h3>Events</h3>
+        <ul id="events-list">
+          <li>Networking Breakfast — 1st Tuesday</li>
+          <li>Small Business Workshop — 3rd Thursday</li>
+          <li>Ribbon Cutting — As announced</li>
+        </ul>
+        <p><a href="directory.html#events">See all events</a></p>
+      </article>
+
+      <article class="card weather-now" aria-live="polite">
+        <h3>Current Weather</h3>
+        <div class="weather-current">
+          <div id="weather-temp" class="weather-temp">--°</div>
+          <div id="weather-desc" class="weather-desc">Loading...</div>
+          <div id="weather-meta" class="weather-meta">Wind: -- • Humidity: --</div>
+        </div>
+      </article>
+
+      <article class="card weather-forecast" aria-live="polite">
+        <h3>3-Day Forecast</h3>
+        <ul id="forecast-list" class="forecast-list">
+          <li>Loading...</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ROW: Spotlight members -->
+    <section class="spotlights" aria-label="Member Spotlights">
+      <h3>Member Spotlights</h3>
+      <div id="spotlight-grid" class="spotlight-grid" role="list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper footer-grid">
+      <div class="foot-brand">
+        <img src="images/logo-light.svg" alt="Chamber logo" class="logo">
+        <div>
+          <h3>Cleghorn Chamber</h3>
+          <p>123 Main Street, Cleghorn TX</p>
+          <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+          <p><a href="mailto:info@cleghornchamber.org">info@cleghornchamber.org</a></p>
+        </div>
+      </div>
+
+      <nav class="foot-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="dev">
+        <p>&copy; <span id="year"></span> Cleghorn Chamber</p>
+        <p>Dylan Cleghorn • WDD 231</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="scripts/home.js"></script>
+</body>
+
+</html>

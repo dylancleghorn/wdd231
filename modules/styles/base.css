@@ -1,0 +1,113 @@
+:root {
+    --ink: #0f172a;
+    --muted: #6b7280;
+    --bg: #f7f7fb;
+    --card: #ffffff;
+    --ring: #e5e7eb;
+    --accent: #2563eb;
+    --accent-contrast: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.5;
+}
+
+header {
+    background: var(--card);
+    border-bottom: 1px solid var(--ring);
+}
+
+h1,
+h2 {
+    margin: 0;
+    padding: 1rem;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: .75rem;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--ring);
+    border-radius: .75rem;
+    padding: 1rem;
+}
+
+label {
+    color: var(--muted);
+}
+
+select,
+button {
+    padding: .6rem .8rem;
+    border: 1px solid var(--ring);
+    border-radius: .6rem;
+    background: #fff;
+}
+
+button {
+    cursor: pointer;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    border-color: transparent;
+}
+
+button:hover {
+    opacity: .95;
+}
+
+.output {
+    margin-top: 1rem;
+    background: var(--card);
+    border: 1px solid var(--ring);
+    border-radius: .75rem;
+    overflow: hidden;
+}
+
+.sections {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sections li {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: .5rem;
+    padding: .85rem 1rem;
+    border-top: 1px solid var(--ring);
+}
+
+.sections li:first-child {
+    border-top: none;
+}
+
+.sections .badge {
+    color: var(--muted);
+}
+
+.sections .cap {
+    font-variant-numeric: tabular-nums;
+}
