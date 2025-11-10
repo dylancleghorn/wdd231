@@ -26,13 +26,11 @@ function textOrEmpty(value) {
 }
 
 // ========================
-// MEMBERSHIP HELPERS (numeric levels)
-// 3 = Gold, 2 = Silver, 1 = Bronze (adjust if different)
+// MEMBERSHIP HELPERS 
 // ========================
 function getLevelNumber(member) {
   const n = Number(member.level);
   if (Number.isFinite(n)) return n;
-  // fallback if you ever switch to strings later
   const s = (member.membershipLevel || member.membership || member.tier || "")
     .toString()
     .toLowerCase();
@@ -128,7 +126,7 @@ async function loadSpotlights() {
     // keep only gold/silver by numeric level
     const premium = members.filter(m => isPremiumLevel(getLevelNumber(m)));
 
-    // choose 2 or 3 random
+    // choose 3 random
     const pickCount = 3
     const copy = premium.slice();
     const selected = [];
@@ -147,7 +145,7 @@ async function loadSpotlights() {
       card.className = "card spotlight";
       card.setAttribute("role", "listitem");
 
-      // === Top line: image + name ===
+      // Top line: image + name 
       const topLine = document.createElement("div");
       topLine.className = "top-line";
 
@@ -163,14 +161,14 @@ async function loadSpotlights() {
       topLine.appendChild(title);
       card.appendChild(topLine);
 
-      // === Phone line + Address line ===
+      //  Phone line + Address line 
       const info = document.createElement("p");
       const phoneHtml = member.phone ? `<strong>Phone:</strong> ${member.phone}<br>` : "";
       const addrHtml = member.address ? `<strong>Address:</strong> ${member.address}` : "";
       info.innerHTML = `${phoneHtml}${addrHtml}`;
       card.appendChild(info);
 
-      // === Badge (last line) ===
+      //  Badge (last line)
       const badge = document.createElement("div");
       badge.className = "badge";
       badge.textContent = lvlName ? `${lvlName} Member` : "";
@@ -179,8 +177,6 @@ async function loadSpotlights() {
       grid.appendChild(card);
     });
 
-    // helpful console check
-    console.log("Spotlight picks:", selected.map(m => `${m.name} (level ${getLevelNumber(m)})`));
   } catch (error) {
     console.error(error);
     grid.innerHTML = "<p>Spotlights unavailable</p>";
