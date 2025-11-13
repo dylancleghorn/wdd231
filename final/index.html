@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scripture Speed Reader — focused reading one word at a time.">
+  <title>Scripture Speed Reader</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a3a2a'/><text x='50' y='58' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'>SR</text></svg>">
+  <link rel="stylesheet" href="styles/style.css">
+  <script defer type="module" src="scripts/main.js"></script>
+</head>
+
+<body data-page="home">
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Scripture Speed Reader</h1>
+      <nav class="site-nav" aria-label="Main">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="reader.html">Reader</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h2>Pace. Focus. Comprehend.</h2>
+      <p>Read scriptures one word at a time. Choose a chapter, set words per minute, and build steady focus.</p>
+      <div class="cta-row">
+        <a class="btn" href="library.html">Open Library</a>
+        <a class="btn btn-quiet" href="reader.html">Open Reader</a>
+      </div>
+      <details class="tip">
+        <summary>How it works</summary>
+        <p>The reader shows one word at a time (or two). Use Space to play/pause, ←/→ to step, and +/- to change WPM.
+        </p>
+      </details>
+    </section>
+
+    <section>
+      <h3>Set a Goal</h3>
+      <form id="goal-form" class="simple-form" action="thanks.html" method="get">
+        <label>Target WPM
+          <input type="number" name="wpm" id="goal-wpm" min="50" max="1000" step="50" required value="600">
+        </label>
+        <label>Current Goal
+          <textarea name="goal" id="goal-text" rows="3" placeholder="What do you hope to achieve?" required></textarea>
+        </label>
+        <button class="btn" type="submit">Save Goal</button>
+      </form>
+      <p id="goal-hint" class="tip">Your goal is saved locally so you can update it anytime.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>&copy; 2025 Scripture Speed Reader · <a href="attributions.html">Attributions</a></small>
+    </div>
+  </footer>
+</body>
+
+</html>

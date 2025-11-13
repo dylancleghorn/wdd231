@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Author" content="Dylan Cleghorn">
+  <meta name="description" content="Browse scripture books and chapters.">
+  <title>Library · Scripture Speed Reader</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script defer type="module" src="scripts/main.js"></script>
+</head>
+
+<body data-page="library">
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Scripture Speed Reader</h1>
+      <nav class="site-nav" aria-label="Main">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="library.html" aria-current="page">Library</a></li>
+          <li><a href="reader.html">Reader</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- *** I think it's cleaner without this *** -->
+    <!-- section>
+      <div class="filter-bar-holder"></div>
+      <label class="inline">Current WPM:
+        <input id="wpm-display" type="number" min="50" max="1000" step="25" value="250" aria-describedby="wpm-help">
+      </label>
+      <small id="wpm-help">Used to estimate reading time.</small>
+    </section -->
+    <h2>Library</h2>
+    <section>
+      <div id="chapter-list"></div>
+    </section>
+  </main>
+
+  <dialog id="chapter-modal" aria-labelledby="chapter-title">
+    <h2 id="chapter-title" class="modal-title"></h2>
+    <div class="modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn read-btn">Read</button>
+      <button class="btn btn-quiet close-btn">Close</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>&copy; 2025 Dylan Cleghorn · Scripture Speed Reader</small>
+    </div>
+  </footer>
+</body>
+
+</html>

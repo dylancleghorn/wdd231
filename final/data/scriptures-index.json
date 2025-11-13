@@ -1,0 +1,464 @@
+{
+  "collections": [
+    {
+      "title": "Old Testament",
+      "books": [
+        {
+          "name": "Genesis",
+          "abbrev": "Genesis",
+          "chapterCount": 50
+        },
+        {
+          "name": "Exodus",
+          "abbrev": "Exodus",
+          "chapterCount": 40
+        },
+        {
+          "name": "Leviticus",
+          "abbrev": "Leviticus",
+          "chapterCount": 27
+        },
+        {
+          "name": "Numbers",
+          "abbrev": "Numbers",
+          "chapterCount": 36
+        },
+        {
+          "name": "Deuteronomy",
+          "abbrev": "Deuteronomy",
+          "chapterCount": 34
+        },
+        {
+          "name": "Joshua",
+          "abbrev": "Joshua",
+          "chapterCount": 24
+        },
+        {
+          "name": "Judges",
+          "abbrev": "Judges",
+          "chapterCount": 21
+        },
+        {
+          "name": "Ruth",
+          "abbrev": "Ruth",
+          "chapterCount": 4
+        },
+        {
+          "name": "1 Samuel",
+          "abbrev": "1Samuel",
+          "chapterCount": 31
+        },
+        {
+          "name": "2 Samuel",
+          "abbrev": "2Samuel",
+          "chapterCount": 24
+        },
+        {
+          "name": "1 Kings",
+          "abbrev": "1Kings",
+          "chapterCount": 22
+        },
+        {
+          "name": "2 Kings",
+          "abbrev": "2Kings",
+          "chapterCount": 25
+        },
+        {
+          "name": "1 Chronicles",
+          "abbrev": "1Chronicles",
+          "chapterCount": 29
+        },
+        {
+          "name": "2 Chronicles",
+          "abbrev": "2Chronicles",
+          "chapterCount": 36
+        },
+        {
+          "name": "Ezra",
+          "abbrev": "Ezra",
+          "chapterCount": 10
+        },
+        {
+          "name": "Nehemiah",
+          "abbrev": "Nehemiah",
+          "chapterCount": 13
+        },
+        {
+          "name": "Esther",
+          "abbrev": "Esther",
+          "chapterCount": 10
+        },
+        {
+          "name": "Job",
+          "abbrev": "Job",
+          "chapterCount": 42
+        },
+        {
+          "name": "Psalms",
+          "abbrev": "Psalms",
+          "chapterCount": 150
+        },
+        {
+          "name": "Proverbs",
+          "abbrev": "Proverbs",
+          "chapterCount": 31
+        },
+        {
+          "name": "Ecclesiastes",
+          "abbrev": "Ecclesiastes",
+          "chapterCount": 12
+        },
+        {
+          "name": "Song of Solomon",
+          "abbrev": "SongofSolomon",
+          "chapterCount": 8
+        },
+        {
+          "name": "Isaiah",
+          "abbrev": "Isaiah",
+          "chapterCount": 66
+        },
+        {
+          "name": "Jeremiah",
+          "abbrev": "Jeremiah",
+          "chapterCount": 52
+        },
+        {
+          "name": "Lamentations",
+          "abbrev": "Lamentations",
+          "chapterCount": 5
+        },
+        {
+          "name": "Ezekiel",
+          "abbrev": "Ezekiel",
+          "chapterCount": 48
+        },
+        {
+          "name": "Daniel",
+          "abbrev": "Daniel",
+          "chapterCount": 12
+        },
+        {
+          "name": "Hosea",
+          "abbrev": "Hosea",
+          "chapterCount": 14
+        },
+        {
+          "name": "Joel",
+          "abbrev": "Joel",
+          "chapterCount": 3
+        },
+        {
+          "name": "Amos",
+          "abbrev": "Amos",
+          "chapterCount": 9
+        },
+        {
+          "name": "Obadiah",
+          "abbrev": "Obadiah",
+          "chapterCount": 1
+        },
+        {
+          "name": "Jonah",
+          "abbrev": "Jonah",
+          "chapterCount": 4
+        },
+        {
+          "name": "Micah",
+          "abbrev": "Micah",
+          "chapterCount": 7
+        },
+        {
+          "name": "Nahum",
+          "abbrev": "Nahum",
+          "chapterCount": 3
+        },
+        {
+          "name": "Habakkuk",
+          "abbrev": "Habakkuk",
+          "chapterCount": 3
+        },
+        {
+          "name": "Zephaniah",
+          "abbrev": "Zephaniah",
+          "chapterCount": 3
+        },
+        {
+          "name": "Haggai",
+          "abbrev": "Haggai",
+          "chapterCount": 2
+        },
+        {
+          "name": "Zechariah",
+          "abbrev": "Zechariah",
+          "chapterCount": 14
+        },
+        {
+          "name": "Malachi",
+          "abbrev": "Malachi",
+          "chapterCount": 4
+        }
+      ]
+    },
+    {
+      "title": "New Testament",
+      "books": [
+        {
+          "name": "Matthew",
+          "abbrev": "Matthew",
+          "chapterCount": 28
+        },
+        {
+          "name": "Mark",
+          "abbrev": "Mark",
+          "chapterCount": 16
+        },
+        {
+          "name": "Luke",
+          "abbrev": "Luke",
+          "chapterCount": 24
+        },
+        {
+          "name": "John",
+          "abbrev": "John",
+          "chapterCount": 21
+        },
+        {
+          "name": "Acts",
+          "abbrev": "Acts",
+          "chapterCount": 28
+        },
+        {
+          "name": "Romans",
+          "abbrev": "Romans",
+          "chapterCount": 16
+        },
+        {
+          "name": "1 Corinthians",
+          "abbrev": "1Corinthians",
+          "chapterCount": 16
+        },
+        {
+          "name": "2 Corinthians",
+          "abbrev": "2Corinthians",
+          "chapterCount": 13
+        },
+        {
+          "name": "Galatians",
+          "abbrev": "Galatians",
+          "chapterCount": 6
+        },
+        {
+          "name": "Ephesians",
+          "abbrev": "Ephesians",
+          "chapterCount": 6
+        },
+        {
+          "name": "Philippians",
+          "abbrev": "Philippians",
+          "chapterCount": 4
+        },
+        {
+          "name": "Colossians",
+          "abbrev": "Colossians",
+          "chapterCount": 4
+        },
+        {
+          "name": "1 Thessalonians",
+          "abbrev": "1Thessalonians",
+          "chapterCount": 5
+        },
+        {
+          "name": "2 Thessalonians",
+          "abbrev": "2Thessalonians",
+          "chapterCount": 3
+        },
+        {
+          "name": "1 Timothy",
+          "abbrev": "1Timothy",
+          "chapterCount": 6
+        },
+        {
+          "name": "2 Timothy",
+          "abbrev": "2Timothy",
+          "chapterCount": 4
+        },
+        {
+          "name": "Titus",
+          "abbrev": "Titus",
+          "chapterCount": 3
+        },
+        {
+          "name": "Philemon",
+          "abbrev": "Philemon",
+          "chapterCount": 1
+        },
+        {
+          "name": "Hebrews",
+          "abbrev": "Hebrews",
+          "chapterCount": 13
+        },
+        {
+          "name": "James",
+          "abbrev": "James",
+          "chapterCount": 5
+        },
+        {
+          "name": "1 Peter",
+          "abbrev": "1Peter",
+          "chapterCount": 5
+        },
+        {
+          "name": "2 Peter",
+          "abbrev": "2Peter",
+          "chapterCount": 3
+        },
+        {
+          "name": "1 John",
+          "abbrev": "1John",
+          "chapterCount": 5
+        },
+        {
+          "name": "2 John",
+          "abbrev": "2John",
+          "chapterCount": 1
+        },
+        {
+          "name": "3 John",
+          "abbrev": "3John",
+          "chapterCount": 1
+        },
+        {
+          "name": "Jude",
+          "abbrev": "Jude",
+          "chapterCount": 1
+        },
+        {
+          "name": "Revelation",
+          "abbrev": "Revelation",
+          "chapterCount": 22
+        }
+      ]
+    },
+    {
+      "title": "Book of Mormon",
+      "books": [
+        {
+          "name": "1 Nephi",
+          "abbrev": "1Nephi",
+          "chapterCount": 22
+        },
+        {
+          "name": "2 Nephi",
+          "abbrev": "2Nephi",
+          "chapterCount": 33
+        },
+        {
+          "name": "Jacob",
+          "abbrev": "Jacob",
+          "chapterCount": 7
+        },
+        {
+          "name": "Enos",
+          "abbrev": "Enos",
+          "chapterCount": 1
+        },
+        {
+          "name": "Jarom",
+          "abbrev": "Jarom",
+          "chapterCount": 1
+        },
+        {
+          "name": "Omni",
+          "abbrev": "Omni",
+          "chapterCount": 1
+        },
+        {
+          "name": "Words of Mormon",
+          "abbrev": "WordsofMormon",
+          "chapterCount": 1
+        },
+        {
+          "name": "Mosiah",
+          "abbrev": "Mosiah",
+          "chapterCount": 29
+        },
+        {
+          "name": "Alma",
+          "abbrev": "Alma",
+          "chapterCount": 63
+        },
+        {
+          "name": "Helaman",
+          "abbrev": "Helaman",
+          "chapterCount": 16
+        },
+        {
+          "name": "3 Nephi",
+          "abbrev": "3Nephi",
+          "chapterCount": 30
+        },
+        {
+          "name": "4 Nephi",
+          "abbrev": "4Nephi",
+          "chapterCount": 1
+        },
+        {
+          "name": "Mormon",
+          "abbrev": "Mormon",
+          "chapterCount": 9
+        },
+        {
+          "name": "Ether",
+          "abbrev": "Ether",
+          "chapterCount": 15
+        },
+        {
+          "name": "Moroni",
+          "abbrev": "Moroni",
+          "chapterCount": 10
+        }
+      ]
+    },
+    {
+      "title": "Doctrine and Covenants",
+      "books": [
+        {
+          "name": "Doctrine and Covenants",
+          "abbrev": "DoctrineandCovenants",
+          "chapterCount": 138
+        }
+      ]
+    },
+    {
+      "title": "Pearl of Great Price",
+      "books": [
+        {
+          "name": "Moses",
+          "abbrev": "Moses",
+          "chapterCount": 8
+        },
+        {
+          "name": "Abraham",
+          "abbrev": "Abraham",
+          "chapterCount": 5
+        },
+        {
+          "name": "Joseph Smith\u2014Matthew",
+          "abbrev": "JosephSmithMatthew",
+          "chapterCount": 1
+        },
+        {
+          "name": "Joseph Smith\u2014History",
+          "abbrev": "JosephSmithHistory",
+          "chapterCount": 1
+        },
+        {
+          "name": "Articles of Faith",
+          "abbrev": "ArticlesofFaith",
+          "chapterCount": 1
+        }
+      ]
+    }
+  ]
+}
