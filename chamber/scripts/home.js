@@ -1,18 +1,19 @@
 // ========================
 // SETTINGS
 // ========================
-const OPENWEATHER_API_KEY = "2f1718261b55e04952ea886294960a86";
-const USE_IMPERIAL_UNITS = true; // true = Fahrenheit, false = Celsius
-const CITY_LATITUDE = 32.7767;   // Dallas, TX
-const CITY_LONGITUDE = -96.7970; // Dallas, TX
 const MEMBERS_JSON_FILE = "data/members.json";
 
+const OPENWEATHER_API_KEY = "2f1718261b55e04952ea886294960a86";
+const CITY_LATITUDE = 32.7767;   // Dallas, TX
+const CITY_LONGITUDE = -96.7970; // Dallas, TX
+
+const USE_IMPERIAL_UNITS = true; // true = Fahrenheit, false = Celsius
 const TEMP_UNITS = USE_IMPERIAL_UNITS ? "imperial" : "metric";
 const TEMP_SYMBOL = USE_IMPERIAL_UNITS ? "°F" : "°C";
 const WIND_UNITS = USE_IMPERIAL_UNITS ? "mph" : "m/s";
 
 // ========================
-// BASIC HELPERS
+//  HELPERS
 // ========================
 function textOrEmpty(value) {
   if (value === null || value === undefined) return "";
@@ -25,19 +26,8 @@ function textOrEmpty(value) {
   return "";
 }
 
-// ========================
-// MEMBERSHIP HELPERS 
-// ========================
-function getLevelNumber(member) {
-  const n = Number(member.level);
-  if (Number.isFinite(n)) return n;
-  const s = (member.membershipLevel || member.membership || member.tier || "")
-    .toString()
-    .toLowerCase();
-  if (s.includes("gold")) return 3;
-  if (s.includes("silver")) return 2;
-  if (s.includes("bronze")) return 1;
-  return 0;
+function isGoldOrSilver(n) {
+  return n === 3 || n === 2; // only Gold or Silver for spotlights
 }
 
 function levelNumberToName(n) {
@@ -47,9 +37,21 @@ function levelNumberToName(n) {
   return "";
 }
 
-function isPremiumLevel(n) {
-  return n === 3 || n === 2; // only Gold or Silver for spotlights
+function pickRandomItems(members, count = 3) {
+  let options = [...members]; // make a copy of the members list
+  const selected = [];
+
+  while (selected.length < count && options.length > 0) {
+    const index = Math.floor(Math.random() * options.length);
+    const chosen = options[index];
+
+    selected.push(chosen);
+    options = options.filter((_, i) => i !== index); // remove selection from options based on index
+  }
+
+  return selected;
 }
+
 
 // ========================
 // WEATHER
@@ -61,21 +63,14 @@ async function loadWeather() {
   const forecastEl = document.getElementById("forecast-list");
 
   try {
-    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${CITY_LATITUDE}&lon=${CITY_LONGITUDE}&units=${TEMP_UNITS}&appid=${OPENWEATHER_API_KEY}`;
-    const currentRes = await fetch(currentUrl);
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${CITY_LATITUDE}&lon=${CITY_LONGITUDE}&units=${TEMP_UNITS}&appid=${OPENWEATHER_API_KEY}`;
+    const weatherRes = await fetch(weatherUrl);
+    const currentWeather = await weatherRes.json();
 
-    if (currentRes.status === 401) {
-      tempEl.textContent = "—";
-      descEl.textContent = "Invalid OpenWeather API key";
-      forecastEl.innerHTML = "<li>Fix API key to load forecast</li>";
-      return;
-    }
-
-    const current = await currentRes.json();
-    const temp = Math.round(current.main?.temp ?? 0);
-    const desc = textOrEmpty(current.weather?.[0]?.description);
-    const wind = Math.round(current.wind?.speed ?? 0);
-    const humidity = Math.round(current.main?.humidity ?? 0);
+    const temp = Math.round(currentWeather.main?.temp ?? 0);
+    const desc = textOrEmpty(currentWeather.weather?.[0]?.description);
+    const wind = Math.round(currentWeather.wind?.speed ?? 0);
+    const humidity = Math.round(currentWeather.main?.humidity ?? 0);
 
     tempEl.textContent = `${temp}°`;
     descEl.textContent = desc ? `${desc.charAt(0).toUpperCase()}${desc.slice(1)}` : "—";
@@ -87,22 +82,20 @@ async function loadWeather() {
     const forecastData = await forecastRes.json();
     const all = forecastData.list || [];
 
-    let chosen = all.filter(i => textOrEmpty(i.dt_txt).endsWith("12:00:00")).slice(0, 3);
-    if (chosen.length < 3) {
-      chosen = [];
-      for (let i = 0; i < all.length && chosen.length < 3; i += 8) chosen.push(all[i]);
-    }
+    let chosen = all.filter(i => textOrEmpty(i.dt_txt).endsWith("12:00:00")).slice(0, 3); //filter date text to get noon entries; slice the first 3
 
     forecastEl.innerHTML = "";
     chosen.forEach(item => {
-      const date = new Date(item.dt * 1000);
-      const label = date.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
+      const date = new Date(item.dt * 1000); // convert timestamp from ms
+      const label = date.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }); // convert timestamp to normal date
       const t = Math.round(item.main?.temp ?? 0);
       const d = textOrEmpty(item.weather?.[0]?.description);
+
       const li = document.createElement("li");
       li.textContent = `${label}: ${t}${TEMP_SYMBOL} — ${d.charAt(0).toUpperCase()}${d.slice(1)}`;
       forecastEl.appendChild(li);
     });
+
   } catch (err) {
     console.error(err);
     descEl.textContent = "Weather unavailable";
@@ -118,59 +111,45 @@ async function loadSpotlights() {
 
   try {
     const res = await fetch(MEMBERS_JSON_FILE);
-    if (!res.ok) throw new Error("Could not load members.json");
+    const members = await res.json();
 
-    const data = await res.json();
-    const members = Array.isArray(data) ? data : (data.members || data.directory || []);
+    // get 3 gold/silver by numeric level
+    const premium = members.filter(m => isGoldOrSilver(m.level));
+    const selected = pickRandomItems(premium, 3);
 
-    // keep only gold/silver by numeric level
-    const premium = members.filter(m => isPremiumLevel(getLevelNumber(m)));
-
-    // choose 3 random
-    const pickCount = 3
-    const copy = premium.slice();
-    const selected = [];
-    while (copy.length > 0 && selected.length < pickCount) {
-      const index = Math.floor(Math.random() * copy.length);
-      selected.push(copy.splice(index, 1)[0]);
-    }
-
-    // render
     grid.innerHTML = "";
     selected.forEach(member => {
-      const lvlNum = getLevelNumber(member);
-      const lvlName = levelNumberToName(lvlNum);
+
+      const lvlName = levelNumberToName(member.level);
 
       const card = document.createElement("article");
-      card.className = "card spotlight";
+      card.className = "card spotlight member";
       card.setAttribute("role", "listitem");
 
-      // Top line: image + name 
-      const topLine = document.createElement("div");
-      topLine.className = "top-line";
+      // image + name 
+      const topLine = document.createElement("header");
 
       const img = document.createElement("img");
-      img.alt = member.name || "Company logo";
-      img.src = member.image || member.logo || "";
+      img.alt = member.name
+      img.src = member.image
       img.loading = "lazy";
 
-      const title = document.createElement("h4");
-      title.textContent = member.name || "Company";
+      const title = document.createElement("h3");
+      title.textContent = member.name;
 
       topLine.appendChild(img);
       topLine.appendChild(title);
       card.appendChild(topLine);
 
-      //  Phone line + Address line 
-      const info = document.createElement("p");
-      const phoneHtml = member.phone ? `<strong>Phone:</strong> ${member.phone}<br>` : "";
-      const addrHtml = member.address ? `<strong>Address:</strong> ${member.address}` : "";
-      info.innerHTML = `${phoneHtml}${addrHtml}`;
-      card.appendChild(info);
+      //  Meta data
+      const meta = document.createElement("div");
+      meta.classList.add("meta");
+      meta.innerHTML = `<p>${member.address}</p><p>${member.phone}</p><p><a href="${member.website}" target="_blank">${member.website.replace(/^https?:\/\//, "")}</a></p>`;
+      card.appendChild(meta);
 
-      //  Badge (last line)
+      //  Badge 
       const badge = document.createElement("div");
-      badge.className = "badge";
+      badge.className = `badge ${member.level == 2 ? 'silver' : 'gold'}`;
       badge.textContent = lvlName ? `${lvlName} Member` : "";
       card.appendChild(badge);
 
@@ -186,16 +165,15 @@ async function loadSpotlights() {
 // ========================
 // FOOTER YEAR
 // ========================
-function setFooterYear() {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-}
+
+document.getElementById('year').textContent = new Date().getFullYear()
+document.getElementById('lastModified').textContent = document.lastModified
 
 // ========================
 // START EVERYTHING
 // ========================
 document.addEventListener("DOMContentLoaded", () => {
-  setFooterYear();
   loadWeather();
   loadSpotlights();
+
 });

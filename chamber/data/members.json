@@ -3,7 +3,7 @@
         "name": "Evergreen Cocoa Roasters",
         "address": "101 Grove Ave, Cleghorn TX",
         "phone": "+1 (555) 200-1101",
-        "website": "https://evergreencocoa.example.com",
+        "website": "https://evergreencocoa.com",
         "image": "https://picsum.photos/100/100?id=1",
         "level": 3
     },
@@ -11,7 +11,7 @@
         "name": "Pioneer Bank & Trust",
         "address": "22 Main St, Cleghorn TX",
         "phone": "+1 (555) 200-1102",
-        "website": "https://pioneerbank.example.com",
+        "website": "https://pioneerbank.com",
         "image": "https://picsum.photos/100/100?id=2",
         "level": 2
     },
@@ -19,7 +19,7 @@
         "name": "River Tech Solutions",
         "address": "9 Innovation Way, Cleghorn TX",
         "phone": "+1 (555) 200-1103",
-        "website": "https://rivertech.example.com",
+        "website": "https://rivertech.com",
         "image": "https://picsum.photos/100/100?id=3",
         "level": 3
     },
@@ -27,7 +27,7 @@
         "name": "Sunrise Fitness",
         "address": "700 Park Blvd, Cleghorn TX",
         "phone": "+1 (555) 200-1104",
-        "website": "https://sunrisefit.example.com",
+        "website": "https://sunrisefit.com",
         "image": "https://picsum.photos/100/100?id=4",
         "level": 1
     },
@@ -35,7 +35,7 @@
         "name": "Valley Hardware",
         "address": "55 Tools Ln, Cleghorn TX",
         "phone": "+1 (555) 200-1105",
-        "website": "https://valleyhardware.example.com",
+        "website": "https://valleyhardware.com",
         "image": "https://picsum.photos/100/100?id=5",
         "level": 2
     },
@@ -43,7 +43,7 @@
         "name": "Blue Sky Realty",
         "address": "300 River Rd, Cleghorn TX",
         "phone": "+1 (555) 200-1106",
-        "website": "https://blueskyrealty.example.com",
+        "website": "https://blueskyrealty.com",
         "image": "https://picsum.photos/100/100?id=6",
         "level": 1
     },
@@ -51,7 +51,7 @@
         "name": "Fresh Fields Market",
         "address": "88 Market Sq, Cleghorn TX",
         "phone": "+1 (555) 200-1107",
-        "website": "https://freshfields.example.com",
+        "website": "https://freshfields.com",
         "image": "https://picsum.photos/100/100?id=7",
         "level": 3
     }

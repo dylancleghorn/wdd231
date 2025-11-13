@@ -81,8 +81,8 @@ function makeCard(m) {
     meta.innerHTML = `
         <p>${m.address}</p>
         <p>${m.phone}</p>
-        <a href="${m.website}" target="_blank">${m.website}</a>
-        <span class="${badge(m.level)}">${levelText(m.level)}</span>
+        <a href="${m.website}" target="_blank">${m.website.replace(/^https?:\/\//, "")}</a>
+        <span class="${badge(m.level)}">${levelText(m.level)} ${m.level != 1 ? 'Member' : ''}</span>
     `
     card.append(head, meta)
     return card
