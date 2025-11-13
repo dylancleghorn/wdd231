@@ -485,7 +485,9 @@ section>h3 {
     margin-block: 1.5rem 2rem;
 }
 
-
+.info-row article.card {
+    margin-bottom: 1rem;
+}
 
 @media(max-width:699px) {
     .list .member {
@@ -502,5 +504,12 @@ section>h3 {
 
     h1 {
         font-size: 1.5rem;
+    }
+}
+
+@media(max-width:768px) {
+    .hero .hero-text {
+        position: relative;
+        margin: -12rem 1rem 1rem;
     }
 }
