@@ -1,16 +1,22 @@
-
 import { fetchScriptureIndex } from './api.js';
 import { getPref, setPref, getCompletedChapters } from './storage.js';
 import { openModal, closeModal } from './modal.js';
 
-const WORKS = ["All", "Old Testament", "New Testament", "Book of Mormon", "Doctrine and Covenants", "Pearl of Great Price"];
+// Will be populated dynamically after we load the index
+let WORKS = ["All"];
 
-function estimateWordsByChapter() { return 700; }
-function buildReference(bookName, chapterNumber) { return `${bookName} ${chapterNumber}`; }
+function estimateWordsByChapter() {
+  return 700;
+}
+
+function buildReference(bookName, chapterNumber) {
+  return `${bookName} ${chapterNumber}`;
+}
 
 function renderFilters(container, onFilter) {
   const bar = document.createElement('div');
   bar.className = 'filter-bar';
+
   WORKS.forEach(w => {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -20,21 +26,46 @@ function renderFilters(container, onFilter) {
     btn.addEventListener('click', () => onFilter(w));
     bar.appendChild(btn);
   });
-  const holder = document.querySelector('.filter-bar-holder') || container.before(bar);
-  if (holder) holder.replaceChildren(bar);
+
+  // Try to use a dedicated holder if it exists, otherwise insert before the list
+  const holder = document.querySelector('.filter-bar-holder');
+  if (holder) {
+    holder.replaceChildren(bar);
+  } else if (container.parentNode) {
+    container.parentNode.insertBefore(bar, container);
+  }
 }
 
 export async function initLibrary() {
   const listContainer = document.getElementById('chapter-list');
   const wpmInput = document.getElementById('wpm-display');
   const savedWpm = Number(getPref('wpm') ?? 250);
-  if (wpmInput) { wpmInput.value = savedWpm; wpmInput.addEventListener('input', () => setPref('wpm', Number(wpmInput.value))); }
+
+  if (wpmInput) {
+    wpmInput.value = savedWpm;
+    wpmInput.addEventListener('input', () => {
+      setPref('wpm', Number(wpmInput.value));
+    });
+  }
 
   let index;
-  try { index = await fetchScriptureIndex(); }
-  catch (err) { listContainer.textContent = 'Failed to load library.'; console.error(err); return; }
+  try {
+    index = await fetchScriptureIndex();
+  } catch (err) {
+    listContainer.textContent = 'Failed to load library.';
+    console.error(err);
+    return;
+  }
 
+  // Build WORKS dynamically from index collections (e.g., ["All", "Book of Mormon"])
+  WORKS = ["All", ...index.collections.map(c => c.title)];
+
+  // Make sure currentFilter is valid; otherwise fall back to "All"
   let currentFilter = localStorage.getItem('workFilter') || 'All';
+  if (!WORKS.includes(currentFilter)) {
+    currentFilter = 'All';
+  }
+
   renderFilters(listContainer, (val) => {
     currentFilter = val;
     localStorage.setItem('workFilter', val);
@@ -53,11 +84,22 @@ export async function initLibrary() {
     const wpm = Number(getPref('wpm') ?? 250);
     const estPerChapter = estimateWordsByChapter();
     const frag = document.createDocumentFragment();
+
     listContainer.innerHTML = '';
 
     index.collections
       .filter(c => currentFilter === 'All' || c.title === currentFilter)
       .forEach(collection => {
+        // --- Collection wrapper + title (e.g., "Book of Mormon") ---
+        const collectionSection = document.createElement('section');
+        collectionSection.className = 'collection-section';
+
+        const h2 = document.createElement('h2');
+        h2.className = 'collection-title';
+        h2.textContent = collection.title; // "Book of Mormon"
+        collectionSection.appendChild(h2);
+
+        // --- Books inside this collection ---
         collection.books.forEach(book => {
           const section = document.createElement('section');
           section.className = 'book-section';
@@ -79,21 +121,26 @@ export async function initLibrary() {
             btn.dataset.book = book.name;
             btn.dataset.chapter = String(ch);
             btn.dataset.reference = ref;
+
             if (completed.has(ref)) {
               btn.classList.add('is-complete');
               btn.setAttribute('aria-pressed', 'true');
               btn.title = 'Completed';
             }
+
             row.appendChild(btn);
           }
 
           section.appendChild(row);
-          frag.appendChild(section);
+          collectionSection.appendChild(section);
         });
+
+        frag.appendChild(collectionSection);
       });
 
     listContainer.appendChild(frag);
   }
+
 
   renderBooks();
   setActiveFilter(currentFilter);
@@ -102,6 +149,7 @@ export async function initLibrary() {
   listContainer.addEventListener('click', (e) => {
     const btn = e.target.closest('.chapter-pill');
     if (!btn) return;
+
     const collection = btn.dataset.collection;
     const book = btn.dataset.book;
     const chapter = Number(btn.dataset.chapter);
@@ -118,8 +166,6 @@ export async function initLibrary() {
         <li><strong>Collection:</strong> ${collection}</li>
         <li><strong>Book:</strong> ${book}</li>
         <li><strong>Chapter:</strong> ${chapter}</li>
-        <!--li><strong>Reference:</strong> ${ref}</li>
-        < li><strong>Est. words (rough):</strong> ${estWords}</li -->
         <li><strong>Est. minutes @ ${wpm} wpm (rough):</strong> ${estMinutes}</li>
       </ul>
     `;
