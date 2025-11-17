@@ -290,6 +290,7 @@ dialog::backdrop {
     border: none;
     border-radius: .5rem;
     padding: .4rem .6rem;
+    cursor: pointer;
   }
 
   .site-nav ul {
