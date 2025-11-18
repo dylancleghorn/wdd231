@@ -26,11 +26,10 @@ if (lastModifiedElement) {
 const timestampInput = document.getElementById('timestamp');
 if (timestampInput) {
     const now = new Date();
-    // ISO string works well with query parameters and is easy to read later
     timestampInput.value = now.toISOString();
 }
 
-// Simple modal handling
+// modal handling
 function openModal(modal) {
     if (!modal) return;
     modal.classList.add('open');
@@ -70,10 +69,9 @@ modalCloseButtons.forEach((button) => {
     });
 });
 
-// Close when clicking outside the modal content
+// Close when clicking outside the modal
 document.addEventListener('click', (event) => {
     const modal = event.target.closest('.modal');
-    // If click is on a visible modal background (not the inner content), close it
     if (event.target.classList.contains('modal') && modal && modal.classList.contains('open')) {
         closeModal(modal);
     }
