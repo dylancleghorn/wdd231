@@ -50,3 +50,22 @@
         font-size: 2.6rem;
     }
 }
+
+@media (min-width: 800px) {
+    .thankyou-main {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+        align-items: flex-start;
+        column-gap: 3rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .join-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+        align-items: flex-start;
+    }
+
+    .membership-levels {
+        margin-top: 0;
+    }
+}

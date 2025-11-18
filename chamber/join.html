@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cleghorn Chamber | Join</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Join the Cleghorn Chamber of Commerce and connect your business with the local community.">
+    <meta name="author" content="Dylan Cleghorn">
+
+    <link rel="icon" href="images/favicon.ico" type="image/svg+xml">
+
+    <meta property="og:title" content="Cleghorn Chamber of Commerce - Join the Chamber">
+    <meta property="og:description"
+        content="Apply for membership in the Cleghorn Chamber of Commerce and access exclusive benefits and networking.">
+    <meta property="og:image" content="https://dylancleghorn.github.io/wdd231/chamber/images/chamber.jpg">
+    <meta property="og:url" content="https://dylancleghorn.github.io/wdd231/chamber/join.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="Chamber logo" class="logo">
+                <div>
+                    <h1>Cleghorn Chamber</h1>
+                    <p class="tagline">Connect • Grow • Thrive</p>
+                </div>
+            </a>
+
+            <button id="menu" aria-expanded="false" aria-controls="primary-nav" class="menu-btn"></button>
+            <nav id="primary-nav" class="nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li class="current"><a href="join.html" aria-current="page">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrapper join-layout">
+        <section class="join-main" aria-label="Membership application">
+            <header class="join-header-text">
+                <h2>Join the Cleghorn Chamber</h2>
+                <p>Become part of a growing network of local businesses, non-profits, and community leaders. Complete
+                    the
+                    form below to apply for membership.</p>
+            </header>
+
+            <form id="join-form" class="join-form" method="get" action="thankyou.html">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+
+                    <label>
+                        <div>First Name <span class="required-mark" aria-hidden="true">*</span></div>
+                        <span class="hint">Required</span>
+                        <input type="text" name="firstName" id="firstName" required title="Enter your first name"
+                            autocomplete="given-name">
+                    </label>
+
+                    <label>
+                        <div>Last Name <span class="required-mark" aria-hidden="true">*</span></div>
+                        <span class="hint">Required</span>
+                        <input type="text" name="lastName" id="lastName" required title="Enter your last name"
+                            autocomplete="family-name">
+                    </label>
+
+                    <label>
+                        Organizational Title
+                        <span class="hint">Letters, spaces, and hyphens only, minimum 7 characters.</span>
+                        <input type="text" name="organizationTitle" id="organizationTitle"
+                            title="Enter your title in the organization (letters, spaces, hyphens only; minimum 7 characters)"
+                            autocomplete="organization-title" pattern="[A-Za-z \-]{7,}">
+                    </label>
+
+                    <label>
+                        <div>Email Address <span class="required-mark" aria-hidden="true">*</span></div>
+                        <span class="hint">Required</span>
+                        <input type="email" name="email" id="email" required title="Enter a valid email address"
+                            autocomplete="email" placeholder="you@example.com">
+                    </label>
+
+                    <label>
+                        <div>Mobile Phone <span class="required-mark" aria-hidden="true">*</span></div>
+                        <span class="hint">Required</span>
+                        <input type="tel" name="mobile" id="mobile" required title="Enter your mobile phone number"
+                            autocomplete="tel">
+                    </label>
+
+                    <label>
+                        <div>Business / Organization Name <span class="required-mark" aria-hidden="true">*</span></div>
+                        <span class="hint">Required</span>
+                        <input type="text" name="organization" id="organization" required
+                            title="Enter the name of your business or organization" autocomplete="organization">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership Details</legend>
+
+                    <label>
+                        <div>Membership Level <span class="required-mark" aria-hidden="true">*</span></div>
+                        <span class="hint">Choose the level that best fits your needs.</span>
+                        <select name="membershipLevel" id="membershipLevel" required title="Select a membership level">
+                            <option value="" disabled selected>Select a membership level</option>
+                            <option value="np">NP Membership (Non-Profit, no fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Business / Organization Description
+                        <span class="hint">Tell us briefly what you do.</span>
+                        <textarea name="description" id="description"
+                            title="Describe your business or organization"></textarea>
+                    </label>
+
+                    <!-- Hidden timestamp - wrapped in a label for accessibility -->
+                    <label class="visually-hidden">
+                        Form timestamp
+                        <input type="hidden" name="timestamp" id="timestamp">
+                    </label>
+                </fieldset>
+
+                <div class="join-form-actions">
+                    <input type="submit" value="Submit Membership Application">
+                </div>
+            </form>
+        </section>
+
+        <section class="membership-levels" aria-label="Membership level options">
+            <h2>Membership Levels</h2>
+            <p>Each level adds more visibility, perks, and support for your organization.</p>
+
+            <div class="membership-grid">
+                <article class="membership-card gold" aria-labelledby="gold-title">
+                    <h3 id="gold-title">Gold Membership</h3>
+                    <p class="price-tag">Premier visibility &amp; perks</p>
+                    <p>The best choice for organizations that want top-tier promotion, access, and partnership with the
+                        Chamber.
+                    </p>
+                    <a href="#modal-gold" data-modal-target="modal-gold">View Gold benefits</a>
+                </article>
+                <article class="membership-card" aria-labelledby="silver-title">
+                    <h3 id="silver-title">Silver Membership</h3>
+                    <p class="price-tag">Expanded promotion</p>
+                    <p>Ideal for growing organizations that want spotlight advertising and stronger community presence.
+                    </p>
+                    <a href="#modal-silver" data-modal-target="modal-silver">View Silver benefits</a>
+                </article>
+                <article class="membership-card" aria-labelledby="bronze-title">
+                    <h3 id="bronze-title">Bronze Membership</h3>
+                    <p class="price-tag">Entry-level visibility</p>
+                    <p>Perfect for small businesses getting started with chamber events, training, and networking.</p>
+                    <a href="#modal-bronze" data-modal-target="modal-bronze">View Bronze benefits</a>
+                </article>
+                <article class="membership-card" aria-labelledby="np-title">
+                    <h3 id="np-title">NP Membership</h3>
+                    <p class="price-tag">Non-profit • No annual fee</p>
+                    <p>Designed for qualifying non-profit organizations that want to plug into the Cleghorn community.
+                    </p>
+                    <a href="#modal-np" data-modal-target="modal-np">View NP benefits</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals for membership benefits -->
+    <div class="modal" id="modal-np" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="modal-np-title">
+        <div class="modal-inner">
+            <button class="modal-close" type="button" data-modal-close>
+                <span aria-hidden="true">&times;</span>
+                <span class="visually-hidden">Close NP membership benefits</span>
+            </button>
+            <h2 id="modal-np-title" data-modal-focus>NP Membership Benefits</h2>
+            <p>NP membership is focused on service and community impact for qualifying non-profit organizations.</p>
+            <ul>
+                <li>Listing in the online chamber directory as a non-profit partner.</li>
+                <li>Access to select community events and service opportunities.</li>
+                <li>Discounted rates on training and educational workshops.</li>
+                <li>Opportunities to collaborate with local businesses and civic groups.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-bronze" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="modal-bronze-title">
+        <div class="modal-inner">
+            <button class="modal-close" type="button" data-modal-close>
+                <span aria-hidden="true">&times;</span>
+                <span class="visually-hidden">Close Bronze membership benefits</span>
+            </button>
+            <h2 id="modal-bronze-title" data-modal-focus>Bronze Membership Benefits</h2>
+            <p>Bronze is a great starting point for small businesses wanting visibility and connection.</p>
+            <ul>
+                <li>Directory listing with contact information and website link.</li>
+                <li>Invitations to monthly networking events.</li>
+                <li>Member-only pricing for chamber-hosted trainings and luncheons.</li>
+                <li>Business news highlights in quarterly email newsletters.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-silver" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="modal-silver-title">
+        <div class="modal-inner">
+            <button class="modal-close" type="button" data-modal-close>
+                <span aria-hidden="true">&times;</span>
+                <span class="visually-hidden">Close Silver membership benefits</span>
+            </button>
+            <h2 id="modal-silver-title" data-modal-focus>Silver Membership Benefits</h2>
+            <p>Silver memberships add more promotion and event visibility for your organization.</p>
+            <ul>
+                <li>All Bronze level benefits.</li>
+                <li>Periodic spotlight position on the home page directory.</li>
+                <li>Logo placement on select chamber event materials.</li>
+                <li>Priority access to training and leadership roundtables.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-gold" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="modal-gold-title">
+        <div class="modal-inner">
+            <button class="modal-close" type="button" data-modal-close>
+                <span aria-hidden="true">&times;</span>
+                <span class="visually-hidden">Close Gold membership benefits</span>
+            </button>
+            <h2 id="modal-gold-title" data-modal-focus>Gold Membership Benefits</h2>
+            <p>Gold membership provides premier recognition and partnership opportunities with the Chamber.</p>
+            <ul>
+                <li>All Silver level benefits.</li>
+                <li>Regular hero or spotlight features on the chamber site.</li>
+                <li>Event sponsorship opportunities and stage recognition.</li>
+                <li>Exclusive strategic planning sessions with chamber leadership.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="wrapper footer-grid">
+            <div class="foot-brand">
+                <img src="images/logo-light.svg" alt="Chamber logo" class="logo">
+                <div>
+                    <h3>Cleghorn Chamber</h3>
+                    <p>123 Main Street, Cleghorn TX</p>
+                    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                    <p><a href="mailto:info@cleghornchamber.org">info@cleghornchamber.org</a></p>
+                </div>
+            </div>
+
+            <nav class="foot-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="dev">
+                <p>&copy; <span id="year"></span> Cleghorn Chamber</p>
+                <p>Dylan Cleghorn • WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="scripts/join.js"></script>
+</body>
+
+</html>

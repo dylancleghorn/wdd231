@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cleghorn Chamber | Thank You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Thank you for applying to join the Cleghorn Chamber of Commerce. Review your submission below.">
+    <meta name="author" content="Dylan Cleghorn">
+
+    <link rel="icon" href="images/favicon.ico" type="image/svg+xml">
+
+    <meta property="og:title" content="Cleghorn Chamber of Commerce - Membership Application Submitted">
+    <meta property="og:description"
+        content="Your membership application has been submitted to the Cleghorn Chamber of Commerce.">
+    <meta property="og:image" content="https://dylancleghorn.github.io/wdd231/chamber/images/chamber.jpg">
+    <meta property="og:url" content="https://dylancleghorn.github.io/wdd231/chamber/thankyou.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="Chamber logo" class="logo">
+                <div>
+                    <h1>Cleghorn Chamber</h1>
+                    <p class="tagline">Connect • Grow • Thrive</p>
+                </div>
+            </a>
+
+            <button id="menu" aria-expanded="false" aria-controls="primary-nav" class="menu-btn"></button>
+            <nav id="primary-nav" class="nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li class="current"><a href="join.html" aria-current="page">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrapper thankyou-main">
+        <header>
+            <h2>Thank you, <span id="thankyou-name">Member</span>!</h2>
+            <p>We’ve received your membership application. A chamber representative will review your information and
+                contact
+                you soon.</p>
+        </header>
+
+        <section class="summary-card" aria-labelledby="summary-heading">
+            <h2 id="summary-heading">Application Summary</h2>
+            <p>The information below includes all required fields from your application.</p>
+
+            <dl class="summary-details">
+                <div class="summary-row">
+                    <dt class="summary-label">First Name</dt>
+                    <dd class="summary-value" id="confirm-firstName">—</dd>
+                </div>
+
+                <div class="summary-row">
+                    <dt class="summary-label">Last Name</dt>
+                    <dd class="summary-value" id="confirm-lastName">—</dd>
+                </div>
+
+                <div class="summary-row">
+                    <dt class="summary-label">Email</dt>
+                    <dd class="summary-value" id="confirm-email">—</dd>
+                </div>
+
+                <div class="summary-row">
+                    <dt class="summary-label">Mobile Phone</dt>
+                    <dd class="summary-value" id="confirm-mobile">—</dd>
+                </div>
+
+                <div class="summary-row">
+                    <dt class="summary-label">Business / Organization</dt>
+                    <dd class="summary-value" id="confirm-organization">—</dd>
+                </div>
+
+                <div class="summary-row">
+                    <dt class="summary-label">Submitted At</dt>
+                    <dd class="summary-value" id="confirm-timestamp">—</dd>
+                </div>
+            </dl>
+
+            <div class="summary-actions">
+                <a href="directory.html" class="primary">View Member Directory</a>
+                <a href="join.html" class="secondary">Submit Another Application</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper footer-grid">
+            <div class="foot-brand">
+                <img src="images/logo-light.svg" alt="Chamber logo" class="logo">
+                <div>
+                    <h3>Cleghorn Chamber</h3>
+                    <p>123 Main Street, Cleghorn TX</p>
+                    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                    <p><a href="mailto:info@cleghornchamber.org">info@cleghornchamber.org</a></p>
+                </div>
+            </div>
+
+            <nav class="foot-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="dev">
+                <p>&copy; <span id="year"></span> Cleghorn Chamber</p>
+                <p>Dylan Cleghorn • WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="scripts/thankyou.js"></script>
+</body>
+
+</html>
