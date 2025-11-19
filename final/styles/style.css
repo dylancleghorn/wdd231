@@ -65,7 +65,8 @@ body {
   border-radius: .5rem;
 }
 
-.site-nav a[aria-current="page"] {
+.site-nav a[aria-current="page"],
+.site-nav a:hover {
   background: #1c2b22;
 }
 
@@ -73,13 +74,27 @@ body {
   display: none;
 }
 
+.icon {
+  width: 15px;
+  position: relative;
+  top: 2px;
+  margin-right: 0.5rem;
+}
+
 .hero {
   padding: 1rem 0 1.5rem;
+  background: url(../images/hero.webp);
+  background-position: bottom;
+  height: 22rem;
+  /* background-position-x: left; */
+  background-size: cover;
+  text-align: center;
 }
 
 .btn {
   background: var(--brand);
-  color: #0a1010;
+  /* color: #0a1010; */
+  color: var(--fg);
   border: none;
   border-radius: .5rem;
   padding: .6rem 1rem;
@@ -101,6 +116,21 @@ body {
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #232835;
+  flex: 1 1 calc(50% - 20px);
 }
 
 .simple-form {
@@ -307,6 +337,10 @@ dialog::backdrop {
     position: absolute;
     right: 1rem;
     top: 3rem;
+  }
+
+  .card {
+    flex: 1 1 100%;
   }
 }
 

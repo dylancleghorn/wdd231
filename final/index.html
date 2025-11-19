@@ -15,7 +15,7 @@
 <body data-page="home">
   <header class="site-header">
     <div class="wrap">
-      <h1>Scripture Speed Reader</h1>
+      <h1><img src="images/icon.svg" class="icon">Scripture Speed Reader</h1>
       <nav class="site-nav" aria-label="Main">
         <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
         <ul id="menu">
@@ -30,31 +30,43 @@
   <main class="wrap">
     <section class="hero">
       <h2>Pace. Focus. Comprehend.</h2>
-      <p>Read scriptures one word at a time. Choose a chapter, set words per minute, and build steady focus.</p>
+      <p>Choose a chapter, set words per minute, and build steady focus.</p>
       <div class="cta-row">
         <a class="btn" href="library.html">Open Library</a>
-        <a class="btn btn-quiet" href="reader.html">Open Reader</a>
+        <!-- a class="btn btn-quiet" href="reader.html">Open Reader</a -->
       </div>
-      <details class="tip">
-        <summary>How it works</summary>
-        <p>The reader shows one word at a time (or two). Use Space to play/pause, ←/→ to step, and +/- to change WPM.
-        </p>
-      </details>
-    </section>
 
-    <section>
-      <h3>Set a Goal</h3>
-      <form id="goal-form" class="simple-form" action="thanks.html" method="get">
-        <label>Target WPM
-          <input type="number" name="wpm" id="goal-wpm" min="50" max="1000" step="50" required value="600">
-        </label>
-        <label>Current Goal
-          <textarea name="goal" id="goal-text" rows="3" placeholder="What do you hope to achieve?" required></textarea>
-        </label>
-        <button class="btn" type="submit">Save Goal</button>
-      </form>
-      <p id="goal-hint" class="tip">Your goal is saved locally so you can update it anytime.</p>
     </section>
+    <div class="cards">
+      <section class="card">
+
+        <h3>How it works</h3>
+        <p>The reader shows one word at a time. </p>
+        <p>
+        <ul>
+          <li>Use Space to play/pause</li>
+          <li>←/→ to step</li>
+          <li>+/- to change WPM.</li>
+        </ul>
+        </p>
+
+      </section>
+
+      <section class="card">
+        <h3>Set a Goal</h3>
+        <form id="goal-form" class="simple-form" action="thanks.html" method="get">
+          <label>Target WPM
+            <input type="number" name="wpm" id="goal-wpm" min="50" max="1000" step="50" required value="600">
+          </label>
+          <label>Current Goal
+            <textarea name="goal" id="goal-text" rows="3" placeholder="What do you hope to achieve?"
+              required></textarea>
+          </label>
+          <button class="btn" type="submit">Save Goal</button>
+        </form>
+        <p id="goal-hint" class="tip">Your goal is saved locally so you can update it anytime.</p>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">

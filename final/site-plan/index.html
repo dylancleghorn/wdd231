@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Scripture Speed Reader · Site Plan</title>
+
+    <!-- Use your existing app styles -->
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/site-plan.css" />
+
+
+    <!-- Minimal site-plan specific styling built on your color tokens -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <h1><img src="../images/icon.svg" class="icon">Scripture Speed Reader</h1>
+
+            <nav class="site-nav" aria-label="Main">
+                <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <ul>
+                    <li><a href="#" aria-current="page">Site Plan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap site-plan-main">
+
+        <section class="plan-section">
+            <p class="plan-kicker">Project</p>
+            <h2>Individual Website Project · WDD231</h2>
+
+        </section>
+
+
+        <section class="plan-section" id="site-name">
+            <p class="plan-kicker">Site Name</p>
+            <p>
+                <strong>Proposed Name:</strong>
+                <span class="highlight">Scripture Speed Reader</span>
+            </p>
+            <p>
+                This name clearly communicates what the site does: it helps users
+                <em>read scriptures</em> at a controlled, configurable speed. The phrase
+                "Speed Reader" mirrors the primary interaction in the app, where text is
+                displayed word-by-word in the reader stage at a chosen WPM rate.
+            </p>
+
+
+        </section>
+
+
+        <section class="plan-section" id="purpose">
+            <p class="plan-kicker">Purpose</p>
+
+            <p>
+                The <span class="highlight">Scripture Speed Reader</span> site provides a focused,
+                distraction-reduced environment for scripture study using a timed, word-based
+                reading experience. The site will:
+            </p>
+            <ul>
+                <li>Offer a scripture library where users can select a book and chapter.</li>
+                <li>Display scriptures one word (or phrase) at a time in the central reader stage.</li>
+                <li>Allow users to set and adjust reading speed in words per minute (WPM).</li>
+                <li>Track chapter completion and visually mark finished chapters.</li>
+                <li>Encourage consistent daily scripture reading with simple tips and goals.</li>
+            </ul>
+
+        </section>
+
+
+        <section class="plan-section" id="scenarios">
+            <p class="plan-kicker">Audience Scenarios</p>
+            <ul>
+                <li>
+                    <strong>Scenario 1:</strong>
+                    "How can I pick a chapter from the library and read it word-by-word at
+                    a specific WPM so I don't get distracted or lose my place?"
+                </li>
+                <li>
+                    <strong>Scenario 2:</strong>
+                    "Can I see which chapters I've already finished so I can track my progress
+                    through a book of scripture?"
+                </li>
+                <li>
+                    <strong>Scenario 3:</strong>
+                    "Is there a way to pause, restart, or slow down the reader if the text is
+                    moving too fast for me?"
+                </li>
+                <li>
+                    <strong>Scenario 4:</strong>
+                    "Can I change font size or theme settings so the scripture text is
+                    comfortable to read on my phone at night?"
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="plan-section" id="colors">
+            <p class="plan-kicker">Color Scheme</p>
+            <p>
+                The Scripture Speed Reader app already uses a dark, high-contrast palette
+                designed for extended reading in low-light environments. The colors below
+                are the core tokens used across the app and this site plan.
+            </p>
+
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="swatch swatch-bg"></div>
+                    <div>
+                        <strong>Background · <code>--bg</code></strong><br />
+                        Hex: <code>#0e0f12</code><br />
+                        Used as the overall page background behind the library, reader stage,
+                        and this site plan. It keeps the focus on the text and controls.
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="swatch swatch-fg"></div>
+                    <div>
+                        <strong>Foreground / Text · <code>--fg</code></strong><br />
+                        Hex: <code>#f7f7fb</code><br />
+                        Used for primary text so scripture words and labels are bright and readable
+                        on the dark background.
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="swatch swatch-card"></div>
+                    <div>
+                        <strong>Card / Panel · <code>--card</code></strong><br />
+                        Hex: <code>#1b1e25</code><br />
+                        Used for cards, panels, and containers such as the reader stage, library
+                        sections, dialogs, and these plan sections.
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="swatch swatch-accent"></div>
+                    <div>
+                        <strong>Accent · <code>--accent</code></strong><br />
+                        Hex: <code>#4ade80</code><br />
+                        Used for important highlights like active controls, key stats, or progress
+                        indicators (for example, completed chapter states).
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="swatch swatch-brand"></div>
+                    <div>
+                        <strong>Brand / Primary Button · <code>--brand</code></strong><br />
+                        Hex: <code>#16a34a</code><br />
+                        Used for primary CTAs (such as the Start/Pause button) and interactive pills
+                        to visually reinforce actions the user should take.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="plan-section" id="typography">
+            <p class="plan-kicker">Typography</p>
+            <p>
+                The app uses a clean system UI stack so it feels native on most devices and
+                keeps scripture text readable at various sizes.
+            </p>
+            <ul>
+                <li>
+                    <strong>Body Text &amp; UI:</strong><br />
+                    <code>system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif</code><br />
+                    Used for paragraphs, labels, buttons, chapter pills, and most interface text.
+                </li>
+                <li>
+                    <strong>Headings:</strong><br />
+                    Same system-UI stack, but with larger sizes and heavier font-weight to
+                    differentiate sections such as "Library", "Reader", and settings headings.
+                </li>
+            </ul>
+
+        </section>
+
+
+        <section class="plan-section" id="wireframes">
+            <p class="plan-kicker">Wireframes</p>
+
+            <div class="wireframes-grid">
+
+                <div class="wireframe-card">
+                    <div class="wireframe-label">Mobile Layout</div>
+                    <pre class="wireframe-diagram">
++--------------------------------------+
+| Header                               |
+| - Logo / Title                       |
+| - Nav toggle                         |
++--------------------------------------+
+| Library                              |
+| - Filter chips (book categories)     |
+| - Book sections                      |
+|   - Chapter pills (scrolling)        |
++--------------------------------------+
+| Reader Stage                         |
+| - Large center word / phrase         |
+| - Status line (chapter & progress)   |
++--------------------------------------+
+| Controls                             |
+| - Start / Pause / Restart buttons    |
+| - WPM slider + numeric value         |
++--------------------------------------+
+| Tips / Help (collapsible details)    |
++--------------------------------------+
+| Footer (small links)                 |
++--------------------------------------+
+          </pre>
+                </div>
+
+                <div class="wireframe-card">
+                    <div class="wireframe-label">Desktop / Tablet Layout</div>
+                    <pre class="wireframe-diagram">
++------------------------------------------------------+
+| Header: Title + Nav                                  |
++------------------------------------------------------+
+| Left Column                   | Right Column         |
+| (approx 35-40%)               | (approx 60-65%)      |
+|                               |                      |
+| - Filters / search            | - Reader stage card  |
+| - Book sections               |   - Big word/phrase  |
+|   - Chapter pills             |   - Reference line   |
+|   - Completed badges          |   - Status line      |
+|                               |                      |
++-------------------------------+----------------------+
+| Bottom row (full width):                             |
+| - Start / Pause / Restart | WPM Slider | Progress    |
++------------------------------------------------------+
+| Footer: About · Help · Keyboard Shortcuts            |
++------------------------------------------------------+
+          </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            Scripture Speed Reader · Site Plan · WDD 231
+        </div>
+    </footer>
+</body>
+
+</html>
