@@ -9,13 +9,13 @@
   <title>Library · Scripture Speed Reader</title>
   <link rel="icon" href="images/icon.svg">
   <link rel="stylesheet" href="styles/style.css">
-  <script defer type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 </head>
 
 <body data-page="library">
   <header class="site-header">
     <div class="wrap">
-      <h1><img src="images/icon.svg" class="icon">Scripture Speed Reader</h1>
+      <h1><img src="images/icon.svg" class="icon" alt="Lightning Bolt Icon">Scripture Speed Reader</h1>
       <nav class="site-nav" aria-label="Main">
         <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
         <ul id="menu">
@@ -36,14 +36,15 @@
       </label>
       <small id="wpm-help">Used to estimate reading time.</small>
     </section -->
-    <h2>Library</h2>
+
     <section>
+      <h2>Library</h2>
       <div id="chapter-list"></div>
     </section>
   </main>
 
   <dialog id="chapter-modal" aria-labelledby="chapter-title">
-    <h2 id="chapter-title" class="modal-title"></h2>
+    <h2 id="chapter-title" class="modal-title">Title</h2>
     <div class="modal-body"></div>
     <div class="modal-actions">
       <button class="btn read-btn">Read</button>
