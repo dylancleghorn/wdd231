@@ -1,35 +1,39 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thanks · Scripture Speed Reader</title>
+  <link rel="icon" href="images/icon.svg">
   <link rel="stylesheet" href="styles/style.css">
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const wrap = document.getElementById('summary');
-    try {
-      const goal = JSON.parse(localStorage.getItem('goal') || 'null');
-      if (goal){
-        wrap.innerHTML = `
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrap = document.getElementById('summary');
+      try {
+        const goal = JSON.parse(localStorage.getItem('goal') || 'null');
+        if (goal) {
+          wrap.innerHTML = `
           <p><strong>Goal Saved!</strong> You can update it anytime on the home page.</p>
           <ul>
             <li><strong>Target WPM:</strong> ${goal.wpm}</li>
             ${goal.text ? `<li><strong>Current Goal:</strong> ${goal.text}</li>` : ''}
           </ul>
         `;
-      } else {
+        } else {
+          wrap.textContent = 'Goal Saved!';
+        }
+      } catch (e) {
         wrap.textContent = 'Goal Saved!';
       }
-    } catch (e){
-      wrap.textContent = 'Goal Saved!';
-    }
-  });
+    });
   </script>
 </head>
+
 <body class="wrap">
   <h1>Thanks!</h1>
   <div id="summary"></div>
   <p><a class="btn" href="index.html">Back to Home</a></p>
 </body>
+
 </html>
