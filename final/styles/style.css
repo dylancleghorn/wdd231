@@ -282,6 +282,10 @@ select {
   color: var(--quiet);
 }
 
+.site-footer a {
+  color: white;
+}
+
 /* Dialog (modal) */
 dialog {
   border: none;
